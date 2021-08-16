@@ -1,26 +1,26 @@
 @font-face{
   font-family: montserrat;
-  src: url(web-fonts/Montserrat/Montserrat-Light.otf);
-  /*src: url(web-fonts/Montserrat/Montserrat-Black.otf),
-        url(web-fonts/Montserrat/Montserrat-Bold.otf),
-        url(web-fonts/Montserrat/Montserrat-Light.otf),
-        url(web-fonts/Montserrat/Montserrat-ExtraLight.otf),
-        url(web-fonts/Montserrat/Montserrat-Light.otf),
-        url(web-fonts/Montserrat/Montserrat-Medium.otf),
-        url(web-fonts/Montserrat/Montserrat-Regular.otf),*/
+  src: url(../web-fonts/Montserrat/Montserrat-Light.otf);
+  /*src: url(../web-fonts/Montserrat/Montserrat-Black.otf),
+        url(../web-fonts/Montserrat/Montserrat-Bold.otf),
+        url(../web-fonts/Montserrat/Montserrat-Light.otf),
+        url(../web-fonts/Montserrat/Montserrat-ExtraLight.otf),
+        url(../web-fonts/Montserrat/Montserrat-Light.otf),
+        url(../web-fonts/Montserrat/Montserrat-Medium.otf),
+        url(../web-fonts/Montserrat/Montserrat-Regular.otf),*/
   font-weight: lighter, bolder;
       }
 @font-face{
   font-family: Nexa;
-  src: url(web-fonts/Nexa/Nexa-Light.otf);
-      /* url(web-fonts/Nexa/Nexa-Bold.otf);*/
+  src: url(../web-fonts/Nexa/Nexa-Light.otf);
+      /* url(../web-fonts/Nexa/Nexa-Bold.otf);*/
  }
 @font-face{
   font-family: PierSans;
-  src: url(web-fonts/PierSans/PierSans-Light.otf);
-      /* url(web-fonts/PierSans/PierSans-Regular.otf),
-       url(web-fonts/PierSans/PierSans-Medium.otf),
-       url(web-fonts/PierSans/PierSans-Bold.otf);
+  src: url(../web-fonts/PierSans/PierSans-Light.otf);
+      /* url(../web-fonts/PierSans/PierSans-Regular.otf),
+       url(../web-fonts/PierSans/PierSans-Medium.otf),
+       url(../web-fonts/PierSans/PierSans-Bold.otf);
   font-weight: lighter bolder;*/
       }
 *{
@@ -85,7 +85,7 @@ button>.active{
   width: 300px;
   shape-outside: circle();
   clip-path: circle();
-  background-image:url("images/IMG-20190726-WA0032.jpg");
+  background-image:url("i../mages/IMG-20190726-WA0032.jpg");
   background-position-x: 45%;
   background-position-y: 8%;
   background-size: 100%;
@@ -237,7 +237,7 @@ button>.active{
   padding: 5%;
 }
 #landing{
-  background-image: url('images/hexagonshadow.jpg');
+  background-image: url('../images/hexagonshadow.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 0;
@@ -295,7 +295,7 @@ button>.active{
 #banner{
   height: 400px;
   width: 100%;
-  background-image: url('images/sackcloth-sackcloth-textured-laptop-ipad-wallpaper-preview.jpg');
+  background-image: url('../images/sackcloth-sackcloth-textured-laptop-ipad-wallpaper-preview.jpg');
   background-repeat: no-repeat;
   background-size:cover;
   text-align: center;
@@ -362,7 +362,7 @@ svg:hover{
   height: 50%;
   position: absolute;
   left: 0px;
-  background-image: url('images/html5.png');
+  background-image: url('../images/html5.png');
   background-position: center;
   background-size: contain;
   transition: ease 0.5s;
@@ -375,7 +375,7 @@ svg:hover{
   height: 50%;
   position: absolute;
   left: 21%;
-  background-image: url('images/css3.jpeg');
+  background-image: url('../images/css3.jpeg');
   transition: ease 0.5s;
 }
 #skill3{
@@ -385,7 +385,7 @@ svg:hover{
   margin: 1%;
   position: absolute;
   left: 62%;
-  background-image: url('images/js.jpg');
+  background-image: url('../images/js.jpg');
   background-position: center;
   background-size: 160%;
   transition: ease 0.5s;
@@ -397,7 +397,7 @@ svg:hover{
   margin-left: 1%;
   position: relative;
   top: 56%;
-  background-image: url('images/figma.png');
+  background-image: url('../images/figma.png');
   background-position: center;
   background-size: 130%;
   transition: ease 0.5s;
@@ -488,24 +488,24 @@ transition: ease 0.5s;
     float: right;
   }
   #project1 #polygon{
-    background-image: url('images/Screenshot\ from\ 2021-04-03\ 16-11-54.png');
+    background-image: url('../images/Screenshot\ from\ 2021-04-03\ 16-11-54.png');
     background-size: cover;
   }
   #project2 #polygon{
-    background-image: url('images/Screenshot\ from\ 2021-04-03\ 16-12-30.png');
+    background-image: url('../images/Screenshot\ from\ 2021-04-03\ 16-12-30.png');
     background-size: cover;
   }
   #project3 #polygon{
-    background-image: url('images/Screenshot\ from\ 2021-04-03\ 16-12-43.png');
+    background-image: url('../images/Screenshot\ from\ 2021-04-03\ 16-12-43.png');
     background-size: cover;
   }
   #project4 #polygon{
-    background-image: url('images/Screenshot\ from\ 2021-04-03\ 16-19-42.png');
+    background-image: url('../images/Screenshot\ from\ 2021-04-03\ 16-19-42.png');
     background-size: cover;
   }
   /*Styling Hobbies page. Aso labeled as Fun side"*/
   #fun{
-    background-image: url('images/palmBeach.jpg');
+    background-image: url('../images/palmBeach.jpg');
     background-size: 100%;
     color: white;
   }
@@ -518,7 +518,7 @@ transition: ease 0.5s;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('images/artwork.jpg');
+    background-image: url('../images/artwork.jpg');
     border-bottom: 5px solid #d99d55;
   }
   #hobbiesslide>p{
