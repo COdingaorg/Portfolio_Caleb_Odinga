@@ -1,0 +1,135 @@
+/*styling profile page*/
+.profile{
+  background-color: white;
+  background-image: url('../images/abstract_bg.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position:right;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+
+}
+.btn_control{
+  background-color: white;
+  width: 100%;
+}
+.btn_control>p{
+  color: var(--green);
+  width: 100%;
+}
+.btn_control>p:hover{
+  color: white;
+}
+.title_profile{
+  background-color: white;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+.left_profile{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  height: 500px;
+}
+.left_profile>.prof_image{
+  margin-top: 10px;
+  height: 200px;
+  width: 100%;
+  border: 2px solid var(--lighter_green);
+  background-color: var(--backg);
+}
+.main_page{
+  background-color: rgba(179, 179, 179, .2);
+  display: flex;
+  flex-direction: column;
+  padding: 6px;
+}
+.image_profile{
+  background-color: white;
+  height: 400px;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 10px;
+}
+.prof_image{
+  background-image: url('../images/human-avatar-profle.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat:no-repeat;
+}
+.recc{
+  background-color: white;
+  border-radius: 10px;
+  overflow-x: scroll;
+}
+.playlist{
+  border: 2px solid white;
+  height: 600px;
+  overflow-y: scroll;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+}
+.card-image{
+  border-radius: 0%;
+}
+.playlist>.card{
+  margin: 3px;
+}
+.redirect_btn{
+  width: auto;
+  height: 30px;
+  margin: 5px;
+  border: 1px solid var(--lighter_green);
+}
+.redirect_btn:hover{
+  color: white;
+}
+.redir{
+  border: 1px solid var(--lighter_green);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+  background-color: var(--backg);
+}
+svg#chart{
+  background-color: black;
+}
+.overlay{
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+
+}
+.inset{
+  background-color: rgba(255, 255, 255, .7);
+  width: 80%;
+  height: 80%;
+  border: 2px solid white;
+  padding: 20px;
+  box-shadow: 2px 2px 5px white;
+}
+.comp_details{
+  height: 290px;
+}
+.remove-btn{
+  width:40px;
+  font-size: .6em;
+  padding: 1px;
+}
