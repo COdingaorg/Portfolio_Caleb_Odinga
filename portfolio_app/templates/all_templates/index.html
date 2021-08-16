@@ -1,3 +1,8 @@
+{% extends 'all_templates/base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content%}
 <div id="index">
   <!--THis part creates the nav bar, including logo and nav link buttons-->
   <div class="container-md-fluid row">
@@ -80,3 +85,4 @@
     </div>
     <button id="projectstab"><a href="projects.html">Projects</a></button>
   </div>
+  {%endblock%}
