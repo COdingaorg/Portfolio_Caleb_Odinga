@@ -1,0 +1,576 @@
+@font-face{
+  font-family: montserrat;
+  src: url(web-fonts/Montserrat/Montserrat-Light.otf);
+  /*src: url(web-fonts/Montserrat/Montserrat-Black.otf),
+        url(web-fonts/Montserrat/Montserrat-Bold.otf),
+        url(web-fonts/Montserrat/Montserrat-Light.otf),
+        url(web-fonts/Montserrat/Montserrat-ExtraLight.otf),
+        url(web-fonts/Montserrat/Montserrat-Light.otf),
+        url(web-fonts/Montserrat/Montserrat-Medium.otf),
+        url(web-fonts/Montserrat/Montserrat-Regular.otf),*/
+  font-weight: lighter, bolder;
+      }
+@font-face{
+  font-family: Nexa;
+  src: url(web-fonts/Nexa/Nexa-Light.otf);
+      /* url(web-fonts/Nexa/Nexa-Bold.otf);*/
+ }
+@font-face{
+  font-family: PierSans;
+  src: url(web-fonts/PierSans/PierSans-Light.otf);
+      /* url(web-fonts/PierSans/PierSans-Regular.otf),
+       url(web-fonts/PierSans/PierSans-Medium.otf),
+       url(web-fonts/PierSans/PierSans-Bold.otf);
+  font-weight: lighter bolder;*/
+      }
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  font-family:PierSans, sans-serif;
+  font-weight: 100;
+  line-height: 1.3em;
+  padding-bottom: 3%;
+  scroll-behavior: smooth;
+}
+/*Styling for index.html*/
+#navbar{
+  height: 70px;
+  background-color: #D96704;
+  color: white;
+  font-weight: bold;
+}
+#navbar button, #projectstab{
+  position: relative;
+  left: 30%;
+  margin-top: 20px;
+  margin-right: 2%;
+  width: 8%;
+  height: 50%;
+  border-radius: 5px;
+  background-color: #732c02;
+  border: 3px solid #d99d55;
+}
+#navbar a, #projectstab{
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+  font-family: PierSans, sans-serif;
+}
+button :hover, .active, #projectstab{
+  font-size: 1.2em;
+  box-shadow: 4px, 4px, 5px, grey;
+}
+button>.active{
+  border-bottom: 2px solid white;
+}
+#projectstab>a{
+  text-decoration: none;
+  color: white;
+}
+#projectstab{
+  position: absolute;
+  width: 10%;
+  height: 40px;
+  text-align: center;
+}
+/*Styling for the landing page image*/
+#face::before{
+  content: "";
+  float: left;
+  height: 300px;
+  width: 300px;
+  shape-outside: circle();
+  clip-path: circle();
+  background-image:url("images/IMG-20190726-WA0032.jpg");
+  background-position-x: 45%;
+  background-position-y: 8%;
+  background-size: 100%;
+  font-size: 0%;
+  margin-top: 2%;
+  margin-left: 2%;
+}
+#face{
+  float: left;
+  height: 312px;
+  width: 312px;
+  shape-outside: circle();
+  clip-path: circle();
+  background-color: #d99d55;
+  margin-left: 10%;
+  transition:  cubic-bezier(1, 0, 0, 1) 2s;
+}
+#face:hover{
+  width: 300px;
+  transition: ease-out .8s;
+}
+  /*Styling for the log and adding the shape to it*/
+#logo{
+  margin-left: 20px;
+  float: left;
+  width: 50px;
+  height: 50px;
+  shape-outside: polygon(
+    30% 0,
+    70% 0,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
+  );
+  clip-path: polygon(
+    30% 0,
+    70% 0,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
+  );
+  background-color: #d99d55;
+  margin-top: 10px;
+  border: 4px solid white;
+  font-size: 0.8em;
+  padding-top: 1%;
+  font-weight: bolder;
+}
+/*Styling paragraph next to the image on landing page*/
+.greeting p:first-child{
+  border:4px solid #d99d55;
+  position: relative;
+  text-align: left;
+  left: 10%;
+  padding:5%;
+  width: 40%;
+  height: 310px;
+  margin-top: 1%;
+  overflow: hidden;
+  background-color: rgba(109, 126, 188, .9);
+  color: white;
+  border-radius: 15px;
+  line-height: 1.8em;
+  font-size: 1.15em;
+  font-family: nexa;
+  font-style: 800;
+}
+.greeting p:first-child a{
+  color: white;
+  font-family: nexa;
+  font-size: 1.3em;
+}
+.greeting p:nth-child(2), #description{
+  margin: 5% 0% 5% 0%;
+  text-align: center;
+  font-family: nexa;
+  font-size: 1.4em;
+}
+#description{
+  background-color: #732c02;
+  padding: 3%;
+  color: white;
+  font-size: 1.2em;
+  line-height: 1.4em;
+  margin-top: -2%;
+}
+/*styling for new item id galllery, after the mapline befor contacts page on index,html*/
+#gallery{
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  width: 100%;
+  overflow-x: scroll;
+}
+#gallery img{
+  margin: 0%;
+}
+#gal{
+  text-align: center;
+  margin: 1%;
+  color: #732c02;
+  text-decoration: underline;
+  }
+/*Styling for contact page*/
+#contact{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 200px;
+  padding: 3%;
+}
+#twitter img, #github img, #whatsapp img{
+  width: 40px;
+  height: 40px;
+  margin-left: 2%;
+}
+#cred{
+  width: 30%;
+  border-right: 2px solid black;
+  line-height: 2em;
+}
+#social{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 30%;
+  border-right: 2px solid black;
+  padding-top: 2%;
+  margin-left:-4%;
+}
+#copy{
+  text-align: center;
+}
+/*Styling Background section in landing page"*/
+#background{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 1%;
+  line-height: 1.5em;
+  width: 90%;
+  padding: 5%;
+}
+#landing{
+  background-image: url('images/hexagonshadow.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0;
+  margin-top: -1%;
+  padding-top: 2%;
+}
+#the-story{
+  margin-top: -8%;
+  width: 90%;
+  padding: 10% 2% 0% 2%;
+  border-radius: 15px;
+  background-size:104% 96%;
+  background-position: center;
+  overflow: visible;
+  background-repeat: no-repeat;
+  color: black;
+}
+#the-story p{
+  margin-bottom: 3%;
+}
+#mapline{
+  line-height: 10em;
+  width: 15%;
+  position: relative;
+  left: 8%;
+}
+#map1, #map2, #map3{
+  shape-outside: circle(35% at 50%);
+  clip-path: circle(35% at 50%);
+  background-color: #d99d55;
+  text-align: center;
+  color: white;
+  font-size: 1.2em;
+}
+#mapline a{
+  text-decoration: none;
+}
+#mapline>a :hover{
+  color: #D96704;
+  font-size: 1.5em;
+  background-color: #732c02;
+  text-shadow: 1px 0px 0px white;
+}
+.line{
+  text-align: center;
+  border-left: 2px solid #732c02;
+  height: 100px;
+  margin:0%;
+  position: relative;
+  left: 50%;
+  margin:-20% 0% -20% 0%;
+}
+/*Styling the projects.html page*/
+/*Styling the banner*/
+#banner{
+  height: 400px;
+  width: 100%;
+  background-image: url('images/sackcloth-sackcloth-textured-laptop-ipad-wallpaper-preview.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+  text-align: center;
+}
+svg{
+  color: white;
+  font-size: 2em;
+  margin: 3% 0 0 0;
+  height: 80%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: ease-out 0.5s;
+}
+svg:hover{
+  margin: 0;
+  height: 100%;
+  transition: ease-in 0.8s;
+}
+/*Styling the skillspart*/
+.topp{
+  padding:2% 5% 2% 5%;
+
+}
+#sidebar{
+  padding: 3% 1% 6% 3%;
+  float: left;
+  width: 20%;
+  line-height: 2em;
+  background-color: #6d7Ebc;
+  border-radius: 15px;
+  margin-top: 8%;
+  margin-right: 1%;
+}
+#sidebar a, #sidebar h3{
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+#sidebar a:hover{
+  text-decoration: underline;
+  color: #732c02  ;
+}
+#skills{
+  width: 80%;
+  height: 350px;
+  position: relative;
+  left: 20%;
+  padding: 0;
+  margin-bottom: 5%;
+  color: white;
+  text-shadow: 2px 0px 0px black;
+}
+#skills>h3{
+  color: #732c02;
+  text-shadow: none;
+  text-decoration: underline;
+  margin-bottom: 2%;
+}
+#skill1{
+  background-color: #732c02;
+  margin: 1%;
+  margin-bottom: 0;
+  width: 20%;
+  height: 50%;
+  position: absolute;
+  left: 0px;
+  background-image: url('images/html5.png');
+  background-position: center;
+  background-size: contain;
+  transition: ease 0.5s;
+}
+#skill2{
+  background-color: #eb691e;
+  margin: 1%;
+  margin-bottom: 0;
+  width: 40%;
+  height: 50%;
+  position: absolute;
+  left: 21%;
+  background-image: url('images/css3.jpeg');
+  transition: ease 0.5s;
+}
+#skill3{
+  background-color: #885538;
+  width: 36%;
+  height: 103%;
+  margin: 1%;
+  position: absolute;
+  left: 62%;
+  background-image: url('images/js.jpg');
+  background-position: center;
+  background-size: 160%;
+  transition: ease 0.5s;
+}
+#skill4{
+  background-color: #ff5e00;
+  width: 61%;
+  height: 50%;
+  margin-left: 1%;
+  position: relative;
+  top: 56%;
+  background-image: url('images/figma.png');
+  background-position: center;
+  background-size: 130%;
+  transition: ease 0.5s;
+  margin-top: -4%;
+}
+#skill1:hover, #skill2:hover, #skill3:hover, #skill4:hover{
+  background-size: 200%;
+  background-position: center;
+  transition: ease 0.8s;
+}
+#skill1 p:hover, #skill2 p:hover, #skill3 p:hover, #skill4 p:hover{
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+  font-size: 2em;
+  color: black;
+  text-shadow: 2px dashed #d99d55;
+  font-family: Nexa;
+  transition: ease 0.8s ;
+}
+#skill1 p, #skill2 p, #skill3 p, #skill4 p {
+background-color: rgba(255, 255, 255, 0);
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 10%;
+transition: ease 0.5s;
+}
+  /*Styling the projec samples section*/
+  #projects{
+    height: 600px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    overflow: scroll;
+    padding: 2%;
+  }
+  .title{
+    text-align: center;
+    margin-top: 2%;
+    color: white;
+    background-color: #732c02;
+    padding: 1.5%
+  }
+  #project1, #project2, #project3, #project4{
+    margin: 3% 2% 0 2%;
+    height: 40%;
+    width: 460px;
+  }
+  .projectDescription{
+    background-color: #732c02;
+    width: 40%;
+    height: 100%;
+    border: 2px solid #d99d55;
+    color: white;
+    padding: 2.5%;
+    font-size: 0.8em;
+
+  }
+  #polygon{
+    border: 3px solid #d99d55;
+    height: 100%;
+    width: 60%;
+    float: right;
+    border-radius: 0 15px 15px 0;
+  }
+  #polygon:hover{
+    background-size: 2000%;
+    background-position: center;
+    border: 3px solid red;
+    
+  }
+  #project2 #polygon, #project3 #polygon{
+    border: 3px solid #d99d55;
+    height: 100%;
+    width: 60%;
+    float: left;
+
+    border-radius:15px 0 0 15px;
+  }
+  #project2 .projectDescription, #project3 .projectDescription{
+    float: right;
+  }
+  #project1 #polygon{
+    background-image: url('images/Screenshot\ from\ 2021-04-03\ 16-11-54.png');
+    background-size: cover;
+  }
+  #project2 #polygon{
+    background-image: url('images/Screenshot\ from\ 2021-04-03\ 16-12-30.png');
+    background-size: cover;
+  }
+  #project3 #polygon{
+    background-image: url('images/Screenshot\ from\ 2021-04-03\ 16-12-43.png');
+    background-size: cover;
+  }
+  #project4 #polygon{
+    background-image: url('images/Screenshot\ from\ 2021-04-03\ 16-19-42.png');
+    background-size: cover;
+  }
+  /*Styling Hobbies page. Aso labeled as Fun side"*/
+  #fun{
+    background-image: url('images/palmBeach.jpg');
+    background-size: 100%;
+    color: white;
+  }
+  #overlay{
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  #hobbiesslide{
+    height: 300px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('images/artwork.jpg');
+    border-bottom: 5px solid #d99d55;
+  }
+  #hobbiesslide>p{
+    font-size: 2em;
+    color: white;
+    background-color: rgba(115, 44, 2, 0.6);
+    width: 20%;
+    height: 40px;
+    padding: 1%;
+    border: 1px solid white;
+    border-radius: 10px;
+  }
+  #hobby1, #hobby2, #hobby3, #hobby4{
+    width: 40%;
+    height: 300px;
+    margin: 5%;
+    overflow: hidden;
+    border: 5px solid white;
+    border-radius: 10px;
+  }
+  #hobbycont{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2%;
+  }
+  #hobby1 img, #hobby2 img, #hobby3 img, #hobby4 img, #hobby5 img{
+    width: 100%;
+  }
+  #hobby5{
+    height: 300px;
+    border: 3px solid white;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  #hobby5 img{
+    float: left;
+  }
+ #hobby1>p, #hobby2>p, #hobby3>p, #hobby4>p{
+   background-color: white;
+   color: black;
+  }
+  #play{
+    background-color: #732c02;
+    width: 200%;
+    text-align: center;
+    padding: 1%;
+    font-size: 1.3em;
+    color: white;
+  }
+  #play audio{
+    margin-top: 2%;
+  }
+ 

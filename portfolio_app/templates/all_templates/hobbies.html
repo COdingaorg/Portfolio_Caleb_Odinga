@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hobbies and talents</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+  <body><!--THis part creates the nav bar, including logo and nav link buttons-->
+    <div id="navbar">
+      <a href="index.html"><span id="logo">Azgad</span></a><em>--More than you know...</em>
+      <button><a href="index.html#background">Know Me</a></button>
+      <button><a href="projects.html">Projects</a></button>
+      <button><a href="hobbies.html" class="active">Fun Side</a></button>
+      <button><a href="index.html#contact">Let's Talk</a></button>
+    </div>
+    <!--Add the page's body-->
+    <div id="fun"><div id="overlay">
+    <div id="hobbiesslide">
+      <p> FUn iN ARt! </p>
+    </div>
+    <h3>Hobbies</h3>
+    <div id="hobbycont">
+    <div id="hobby1">
+      <p>Star Gazing-- Watching the sky blinking, stars shooting, makes you marvel at the wonder that is Earth.</p>
+      <img src="images/stargazing.jpg" alt="Star Gazing">
+    </div>
+    <div id="hobby2"><p>Photography--Remember that wonder that is Earth, Now imagine having that memory for life, and sharing it with others in its ourest form.</p>
+      <img src="images/photography.jpeg" alt="Photography">
+    </div>
+    <div id="hobby3"><p>Binge Watching--<p>So there is watching Movies, then there is Binge Watching, The difference is...hold upill be back.</p>
+      <img src="images/Bingewatching.jpg" alt="Binge Watching">
+    </div>
+    <div id="hobby4"><p>Travelling--<p>And not to those crowded noisy places, Breezy and silent is the type of thing thats for me.Did i say trains are the Best?</p>
+      <img src="images/traintravelling.jpeg" alt="Travelling">
+    </div>
+    <div id="hobby5"><h4>Music</h4>
+      <img src="images/coldplay.jpg" alt="Music">
+    </div>
+    <div id="play">
+    <p>And on the Seventh Day, He made Coldplay. That Band y'all. Here is a taste!</p>
+      <audio controls>
+        <source src="images/Coldplay - Paradise (Official Video).mp3" preload="auto">
+      </audio>
+      </div>
+    </div><hr />
+    <!--<iframe src="https://giphy.com/embed/14u2ZI1XhkoZCU" width="30%" frameBorder="0" class="giphy-embed"></iframe>-->
+    <div id="contact"><!--This part illustrates the contact page. On can choose to click on the email and it automaticall opens the users email provider,
+      call or use the contact form to talk to the site owner. The form should be able to send information to sites backend and trigger notification to the owner. For future development-->
+     <div id="cred"><p>
+         <h3>Phone Number:</h3>+254768156350 or +254702845998
+       </p>
+       <p>
+        <h3>Email Address</h3><a href="mailto:calemasanga@gmail.com">calemasanga@gmail.com</a>
+       </p>
+     </div>
+     <p id="social">
+       <span id="twitter"><caption><img src="images/twitter.png" alt="@Sir_odinga">@Sir_odinga</caption></span>
+       <span id="github"><caption><img src="images/github.png" alt="@Sir_odinga">@COdingaorg</caption></span>
+       <span id="whatsapp"><caption><img src="images/WhatsApp.svg" alt="@Sir_odinga">+254702845998</caption></span>
+     </p>
+     <div id="contactform">
+       <label>Contact Me</label><!--This form added here is a skeleton ofwhat is to be built. Action and method functiona are currently not working but will be made right in the future-->
+       <table>
+         <form target="_parent" method="POST">
+         <tr>
+           <td>Name : </td><td><input type="text" id="name" name="officialName" placeholder="official names please"></td>
+         </tr>
+         <tr>
+           <td>Subject : </td><td><input type="text" length="20"></td>
+         </tr>
+         <tr>
+           <td>Message : </td><td><textarea type="text" placeholder="Give detailed information on your subject"></textarea></td>
+         </tr>
+         <tr>
+           <td><input type="submit" placeholder="SUBMIT"></td>
+         </tr>
+         </form>
+       </table>
+     </div>
+   </div>
+   <p id="copy">&copy;copyright: Caleb Odinga 2021</p>
+  </div>
+  </div>
+</body>
+</html>
