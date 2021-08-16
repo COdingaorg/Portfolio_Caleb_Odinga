@@ -56,6 +56,6 @@ def profile(request):
   context = {
     'title':title
   }
-  return render(request, 'all_templates/index.html', context)
+  return render(request, 'all_templates/profile.html', context)
 
 #
