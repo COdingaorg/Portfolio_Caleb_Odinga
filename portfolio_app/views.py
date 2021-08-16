@@ -46,3 +46,16 @@ def contacts(request):
     'title':title
   }
   return render(request, 'all_templates/index.html', context)
+
+#view function to profile page
+def profile(request):
+  '''
+  renders profile page
+  '''
+  title = 'Profile  '
+  context = {
+    'title':title
+  }
+  return render(request, 'all_templates/index.html', context)
+
+#

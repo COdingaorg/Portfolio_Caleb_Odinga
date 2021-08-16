@@ -45,7 +45,7 @@ class Social(models.Model):
 
 class Projects(models.Model):
   title = models.CharField(max_length=256)
-  description = models.TextField()
+  description = tiny_model.HTMLField()
   image_path = models.ImageField(upload_to = 'Projects/')
   skill = models.ForeignKey(Skill, on_delete=CASCADE)
   profile = models.ForeignKey(Profile, on_delete=CASCADE)

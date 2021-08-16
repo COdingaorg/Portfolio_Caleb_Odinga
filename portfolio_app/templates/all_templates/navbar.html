@@ -1,7 +1,14 @@
-<div id="navbar" class="row">
-  <a href="/"><span id="logo">Azgad</span></a><em>--More than you know...</em>
-  <button><a href="#background" class="active">Know Me</a></button>
-  <button><a href="{% url 'project'%}">Projects</a></button>
-  <button><a href="{% url 'hobby' %}">Fun Side</a></button>
-  <button><a href="{% url 'contact' %}">Let's Talk</a></button>
+<div id="navbar">
+  <div class="navbar_brand">
+    <a href="/"><span id="logo">Azgad</span></a>
+    <h6>More than you know...</h6>
+  </div>
+  <div class="nav_items">
+    <button><a href="#background" class="active">Know Me</a></button>
+    <button><a href="{% url 'project'%}">Projects</a></button>
+    <button><a href="{% url 'hobby' %}">Fun Side</a></button>
+    <button><a href="{% url 'contact' %}">Let's Talk</a></button>
+
+    <button><a href="{% url 'profile' %}">Profile</a></button>
+  </div>
 </div>

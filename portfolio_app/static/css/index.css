@@ -23,6 +23,14 @@
        url(../web-fonts/PierSans/PierSans-Bold.otf);
   font-weight: lighter bolder;*/
       }
+:root{
+
+  --brown: #732c02;
+  --gold: #d99d55;
+  --orange: #D96704;
+  --blue: rgba(109, 126, 188, .9);
+}
+
 *{
   margin: 0%;
   padding: 0%;
@@ -33,49 +41,52 @@ body{
   font-family:PierSans, sans-serif;
   font-weight: 100;
   line-height: 1.3em;
-  padding-bottom: 3%;
   scroll-behavior: smooth;
 }
-/*Styling for index.html*/
+/*Styling for navbar */
 #navbar{
-  height: 70px;
-  background-color: #D96704;
+  height: auto;
+  background-color: var(--orange);
   color: white;
-  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 20px;
+}
+.navbar_brand{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 #navbar button, #projectstab{
-  position: relative;
-  left: 30%;
-  margin-top: 20px;
-  margin-right: 2%;
-  width: 8%;
-  height: 50%;
   border-radius: 5px;
-  background-color: #732c02;
-  border: 3px solid #d99d55;
+  background-color: var(--brown);
+  border: 2px solid var(--gold);
+  padding: 4px;
+  margin: 0px 8px;
 }
 #navbar a, #projectstab{
   color: white;
   text-decoration: none;
-  font-weight: bolder;
+  font-weight: bold;
+  font-size: .8em;
   font-family: PierSans, sans-serif;
 }
-button :hover, .active, #projectstab{
+.nav_items{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 90%;
+}
+button:hover, .active, #projectstab{
   font-size: 1.2em;
-  box-shadow: 4px, 4px, 5px, grey;
 }
 button>.active{
   border-bottom: 2px solid white;
-}
-#projectstab>a{
-  text-decoration: none;
-  color: white;
-}
-#projectstab{
-  position: absolute;
-  width: 10%;
-  height: 40px;
-  text-align: center;
 }
 /*Styling for the landing page image*/
 #face::before{
@@ -85,7 +96,7 @@ button>.active{
   width: 300px;
   shape-outside: circle();
   clip-path: circle();
-  background-image:url("i../mages/IMG-20190726-WA0032.jpg");
+  background-image:url("../images/IMG-20190726-WA0032.jpg");
   background-position-x: 45%;
   background-position-y: 8%;
   background-size: 100%;
@@ -99,7 +110,7 @@ button>.active{
   width: 312px;
   shape-outside: circle();
   clip-path: circle();
-  background-color: #d99d55;
+  background-color: var(--gold);
   margin-left: 10%;
   transition:  cubic-bezier(1, 0, 0, 1) 2s;
 }
@@ -109,7 +120,6 @@ button>.active{
 }
   /*Styling for the log and adding the shape to it*/
 #logo{
-  margin-left: 20px;
   float: left;
   width: 50px;
   height: 50px;
@@ -133,16 +143,20 @@ button>.active{
     0% 70%,
     0% 30%
   );
-  background-color: #d99d55;
+  background-color: var(--gold);
   margin-top: 10px;
   border: 4px solid white;
   font-size: 0.8em;
   padding-top: 1%;
   font-weight: bolder;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
 }
 /*Styling paragraph next to the image on landing page*/
 .greeting p:first-child{
-  border:4px solid #d99d55;
+  border:4px solid var(--gold);
   position: relative;
   text-align: left;
   left: 10%;
@@ -151,7 +165,7 @@ button>.active{
   height: 310px;
   margin-top: 1%;
   overflow: hidden;
-  background-color: rgba(109, 126, 188, .9);
+  background-color: var(--blue);
   color: white;
   border-radius: 15px;
   line-height: 1.8em;
@@ -171,7 +185,7 @@ button>.active{
   font-size: 1.4em;
 }
 #description{
-  background-color: #732c02;
+  background-color: var(--brown);
   padding: 3%;
   color: white;
   font-size: 1.2em;
@@ -192,7 +206,7 @@ button>.active{
 #gal{
   text-align: center;
   margin: 1%;
-  color: #732c02;
+  color: var(--brown);
   text-decoration: underline;
   }
 /*Styling for contact page*/
@@ -267,7 +281,7 @@ button>.active{
 #map1, #map2, #map3{
   shape-outside: circle(35% at 50%);
   clip-path: circle(35% at 50%);
-  background-color: #d99d55;
+  background-color: var(--gold);
   text-align: center;
   color: white;
   font-size: 1.2em;
@@ -276,14 +290,14 @@ button>.active{
   text-decoration: none;
 }
 #mapline>a :hover{
-  color: #D96704;
+  color: var(--orange);
   font-size: 1.5em;
-  background-color: #732c02;
+  background-color: var(--brown);
   text-shadow: 1px 0px 0px white;
 }
 .line{
   text-align: center;
-  border-left: 2px solid #732c02;
+  border-left: 2px solid var(--brown);
   height: 100px;
   margin:0%;
   position: relative;
@@ -336,7 +350,7 @@ svg:hover{
 }
 #sidebar a:hover{
   text-decoration: underline;
-  color: #732c02  ;
+  color: var(--brown)  ;
 }
 #skills{
   width: 80%;
@@ -349,13 +363,13 @@ svg:hover{
   text-shadow: 2px 0px 0px black;
 }
 #skills>h3{
-  color: #732c02;
+  color: var(--brown);
   text-shadow: none;
   text-decoration: underline;
   margin-bottom: 2%;
 }
 #skill1{
-  background-color: #732c02;
+  background-color: var(--brown);
   margin: 1%;
   margin-bottom: 0;
   width: 20%;
@@ -417,7 +431,7 @@ svg:hover{
   margin-top: 10%;
   font-size: 2em;
   color: black;
-  text-shadow: 2px dashed #d99d55;
+  text-shadow: 2px dashed var(--gold);
   font-family: Nexa;
   transition: ease 0.8s ;
 }
@@ -445,7 +459,7 @@ transition: ease 0.5s;
     text-align: center;
     margin-top: 2%;
     color: white;
-    background-color: #732c02;
+    background-color: var(--brown);
     padding: 1.5%
   }
   #project1, #project2, #project3, #project4{
@@ -454,17 +468,17 @@ transition: ease 0.5s;
     width: 460px;
   }
   .projectDescription{
-    background-color: #732c02;
+    background-color: var(--brown);
     width: 40%;
     height: 100%;
-    border: 2px solid #d99d55;
+    border: 2px solid var(--gold);
     color: white;
     padding: 2.5%;
     font-size: 0.8em;
 
   }
   #polygon{
-    border: 3px solid #d99d55;
+    border: 3px solid var(--gold);
     height: 100%;
     width: 60%;
     float: right;
@@ -477,7 +491,7 @@ transition: ease 0.5s;
     
   }
   #project2 #polygon, #project3 #polygon{
-    border: 3px solid #d99d55;
+    border: 3px solid var(--gold);
     height: 100%;
     width: 60%;
     float: left;
@@ -519,7 +533,7 @@ transition: ease 0.5s;
     align-items: center;
     justify-content: center;
     background-image: url('../images/artwork.jpg');
-    border-bottom: 5px solid #d99d55;
+    border-bottom: 5px solid var(--gold);
   }
   #hobbiesslide>p{
     font-size: 2em;
@@ -563,7 +577,7 @@ transition: ease 0.5s;
    color: black;
   }
   #play{
-    background-color: #732c02;
+    background-color: var(--brown);
     width: 200%;
     text-align: center;
     padding: 1%;

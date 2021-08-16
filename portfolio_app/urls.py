@@ -5,5 +5,6 @@ urlpatterns = [
   url(r'^$', views.index, name = 'index'),
   url(r'^projects/$', views.projects, name = 'project'),
   url(r'^hobbies/$', views.hobbies, name = 'hobby'),
-  url(r'^contact/$', views.contacts, name = 'contact')
+  url(r'^contact/$', views.contacts, name = 'contact'),
+  url(r'^profile/$', views.profile, name = 'profile'),
 ]
