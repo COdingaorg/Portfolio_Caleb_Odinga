@@ -40,7 +40,7 @@
   margin-top: 10px;
   height: 200px;
   width: 100%;
-  border: 2px solid var(--lighter_green);
+  border: 2px solid yellow;
   background-color: var(--backg);
 }
 .main_page{
@@ -56,7 +56,7 @@
   margin: 15px;
   border-radius: 10px;
 }
-.prof_image{
+.prof_image2{
   background-image: url('../images/human-avatar-profle.png');
   background-position: center;
   background-size: contain;
