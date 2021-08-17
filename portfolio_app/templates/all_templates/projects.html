@@ -82,68 +82,65 @@
       <image x="1030" y="330" href="images/chart-2-xxl.png" width="150">
     </svg>
 </div>
-<div class="topp">
-  <div id="sidebar">
-    <h3>Live Links</h3>
-    <ol type="1">
-      <li><a href="https://codingaorg.github.io/My-Favorite-project-band/" target="_blank">My Favorite Band</a></li>
-      <li><a href="https://codingaorg.github.io/Anitas-Kitchen-Week2-IP/" target="_blank">Anita's Kitchen</a></li>
-      <li><a href="https://codingaorg.github.io/Dairy-Bs-Report-Generator/" target="_blank">Dairy Business Report
-          Generator</a></li>
-      <li><a href="https://calebOdinga.github.io/Caleb-Odinga-My-Portfolio/" target="_blank">Personal Portfolio</a></li>
-    </ol>
-  </div>
-  <div id="skills">
-    <!--Hightlights the technologies used. Images to be used as backgrounds. Add hover-->
-    <h3>Technology and Skills used on the Projects</h3>
-    <div id="skill1">
-      <p>HTML5</p>
-    </div>
-    <div id="skill2">
-      <p>css3</p>
-    </div>
-    <div id="skill3">
-      <p>Javascript</p>
-    </div>
-    <div id="skill4">
-      <p>Figma</p>
-    </div>
-  </div>
-</div>
 <hr />
 <h3 class="title">Projects Completed</h3>
 <div id="projects">
   <!--showsthe projects and their descriptions.
 The class vertical rule is for adding a line, as in the design-->
-  <div id="project1">
-    <span id="polygon">
+  {% if projects %}
+  {% for project in projects %}
+  <div class="card">
+    <div class="card-image">
+      <div id="project1" style="background-image: url('{{project.image_path.url}}');">
 
-    </span>
-    <p class="projectDescription">This is a website of my favorite artist band- Sauti Sol.
-      Sauti sol is a Kenyan based band, singing Afro pop fusion. This website shows their Albums and songs,
-      Group members, Links to their songs and Awards Won.
-    </p>
+      </div>
+    </div>
+    <div class="card-body">
+      <h4>{{project.title}}</h4>
+      <p class="projectDescription">{{project.description}}</p>
+      <div class="card-footer">
+        Technologies used:
+        {{project.skill.title}}
+      </div>
+    </div>
+
   </div>
   <span class="vertical rule"></span>
-  <div id="project2">
-    <p class="projectDescription">This Website is called Anitas Kitchen. It highlights meals served in the Restuarant,
-      Hours the meals get served, Customer testimonials and location of the restuarant.
-    </p>
-    <span id="polygon"></span>
+  {% endfor %}
+  {%else%}
+  <h5 class="bold mute text-center">No projects found!</h5>
+  {%endif%}
+</div>
+<a href="projects.html#navbar" id="projectstab">&UpArrowBar;Back Top</a>
+<div class="github_repo">
+  <div id="sidebar">
+    <h3>Github Repo Links</h3>
+    {% if github_links %}
+    {% for link in github_links %}
+    <ol type="1">
+      <li><a href="{{link.link}}" target="_blank">{{link.title}}</a></li>
+    </ol>
+    {% endfor %}
+    {% else %}
+    <h6 class="bold mute text-center">
+      No Live Links found
+    </h6>
+    {%endif%}
   </div>
-  <div id="project3">
-    <p class="projectDescription">Dairy Business Report Generator is a website that generates report on the amount of
-      milk produced per shed.
-      It also shows the amount of revenue expected- per week and per year.
-    </p>
-    <span id="polygon"></span>
+</div>
+<div class="topp">
+  <div id="skills">
+    <!--Hightlights the technologies used. Images to be used as backgrounds. Add hover-->
+    <h3>Technology used</h3>
+    {% if skills %}
+    {% for skill in skills %}
+    <div id="skill1">
+      <p>HTML5</p>
+    </div>
+    {% endfor %}
+    {%else%}
+    <h6 class="bold mute text-center">No skills Found</h6>
+    {%endif%}
   </div>
-  <span class="vertical rule"></span>
-  <div id="project4">
-    <span id="polygon"></span>
-    <p class="projectDescription">This is the current page. Professional Portfolio. It highlights my projects, talks
-      about my background, hobbies, skills and Experiences.
-      It also has my contacts through which one can reach out.</p>
-  </div>
-</div><a href="projects.html#navbar" id="projectstab">&UpArrowBar;Back Top</a>
+</div>
 {%endblock%}

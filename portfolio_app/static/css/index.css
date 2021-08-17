@@ -504,7 +504,6 @@ transition: ease 0.5s;
     float: right;
   }
   #project1 #polygon{
-    background-image: url('../images/Screenshot\ from\ 2021-04-03\ 16-11-54.png');
     background-size: cover;
   }
   #project2 #polygon{

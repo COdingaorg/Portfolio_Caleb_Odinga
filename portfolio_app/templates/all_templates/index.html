@@ -3,76 +3,78 @@
 {% load bootstrap4 %}
 
 {% block content%}
-<div id="index">
+<div id="index" class="container-md-fluid">
   <!--THis part creates the nav bar, including logo and nav link buttons-->
-  <div class="container-md-fluid row">
-    <div id="landing" class="row">
-      <!-- This part defines the langing page, banner, What a usersees immediately they visit the site-->
-      <span id="face"></span>
-      <span class="greeting">
-        <h4 class="intro_mess">{{profile.intro_message}}</h4>
-        <p class="tagline">{{profile.tagline}}</p>
-      </span>
-      <div id="description">
-        <p>{{profile.mantra}}</p>
-      </div>
+  <div id="landing">
+    <!-- This part defines the langing page, banner, What a usersees immediately they visit the site-->
+    <span id="face"></span>
+    <span class="greeting">
+      <h4 class="intro_mess">{{profile.intro_message}}</h4>
+      <p class="tagline">{{profile.tagline}}</p>
+    </span>
+    <div id="description">
+      <p>{{profile.mantra}}</p>
     </div>
-    <hr />
-    <div id="background" class="row">
-      <!--This part illustrates the background section. On the right side is a mapline, in future these are made link to different parts of the story. Once cicked the corresponding part of the story highlights-->
-      <div id="the-story">
-        <h2>Background</h2>
-        <p id="intro">Born in a humble village with less exposure,<i>(Ofcourse i didnt know that back then)</i>I had
-          less interaction with computers, but everytime i laid my hands on one, the owner
-          would either complain of me draining out the battery or changing settings to something they never knew
-          existed. All i wanted to do was to figure out how these little things worked.
-          Little did i know just how small i was interacting with this Enormous world of Technology</p>
-        <p id="Education">
-          <h2>Education</h2>
-          My love for Technology started when i joined campus, where i studied Business in information Technology, for
-          2
-          semesters. I later saw that i could learn way more in another way so i defered.
-          It is at <strong>Moringa School</strong> that i gained the basic fundamentals skills. Focus at Moringa is
-          Learning to Learn and developing the <strong>Problem solving Mentality</strong>. I got to
-          know how to collaborate with others and also have the discipline to start and finish a project.
-        </p>
-        <p id="Career">
-          <h3>Career</h3>
-          My first job was as a gardener, then a messenger. I later joined an Ecommerce company as a field intern.
-          Years
-          of work resulted tome being promoted to customer service, then with training a Field Operations officer.
-          My job had me encouter all type of persons thus knowing how do work together with them and ensuring that you
-          part ways at a point where you can work with them again- was paramount.
-          I later joined another Ecommerce startup as a consultant and Web maintenance assistant. This is where am
-          working currnetly.
-          I have also freelanced on a some website development and research.
-          <em>The goal</em> is to understand Data science and Machine Learning.
-
-        </p>
-      </div>
-      <div id="mapline">
-        <a href="index.html#intro">
-          <div id="map1">Intro</div>
-        </a>
-        <div class="line"></div>
-        <a href="index.html#Education">
-          <div id="map2">Education</div>
-        </a>
-        <div class="line"></div>
-        <a href="index.html#Career">
-          <div id="map3">Career</div>
-        </a>
-      </div>
-    </div>
-    <hr />
-    <h4 id="gal">My Creative Tools</h4>
-    <div id="gallery" class="row">
-      <img alt="After Effect" src="images/Adobe-After-Effects-1.jpg">
-      <img alt="Vs Code" src="images/vscode.png">
-      <img alt="photoshop" src="images/Photoshop.jpg">
-      <img alt="Codepen" src="images/codepen.png">
-      <img alt="premiere pro" src="images/premierepro.png">
-    </div>
-    <button id="projectstab"><a href="projects.html">Projects</a></button>
   </div>
-  {%endblock%}
+  <hr />
+  <div id="background" class="row">
+    <!--This part illustrates the background section. On the right side is a mapline, in future these are made link to different parts of the story. Once cicked the corresponding part of the story highlights-->
+    <div id="the-story">
+      {% if background %}
+      {% for story in background%}
+      <div class="card">
+        <div class="card-title">
+          <h2>{{story.title}}</h2>
+        </div>
+        <div class="card-body">
+          <p id="intro">{{story.description}}</p>
+        </div>
+        {% if story.links%}
+        <div class="card-footer">
+          <h6 class="bold">{{story.links}}</h6>
+        </div>
+        {%endif%}
+
+        <div id="mapline">
+          <a href="">
+            <div id="map1">Intro</div>
+          </a>
+        </div>
+      </div>
+      {%endfor%}
+      {%else%}
+      <p class="bold">No Stories added!</p>
+      {%endif%}
+    </div>
+
+  </div>
+  <hr />
+  <div class="tools">
+    <h4 id="gal">Creative Tools</h4>
+    {% if tools %}
+    <div id="gallery" class="row">
+      {% for tool in tools %}
+      <div class="card">
+        <div class="card-image">
+          <img alt="{{tool.title}}" src="{{tool.image_path.url}}">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">
+            {{tool.title}}
+          </h5>
+          <p class="card-text">
+            {{tool.description}}
+          </p>
+          <h5 class="pill">
+            For: {{tool.skill.title}}
+          </h5>
+        </div>
+      </div>
+      {% endfor%}
+    </div>
+    {%else%}
+    <h6 class="bold mute"> No tools added yet</h6>
+    {%endif%}
+  </div>
+</div>
+{%endblock%}

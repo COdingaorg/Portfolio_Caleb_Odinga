@@ -64,7 +64,7 @@ class Projects(models.Model):
   title = models.CharField(max_length=256)
   description = tiny_model.HTMLField()
   image_path = models.ImageField(upload_to = 'Projects/')
-  skill = models.ForeignKey(Skill, on_delete=CASCADE)
+  skill = models.ManyToManyField(Skill, related_name='skill')
   profile = models.ForeignKey(Profile, on_delete=CASCADE)
 
   def __str__(self):
