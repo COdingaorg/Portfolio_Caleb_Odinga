@@ -82,21 +82,20 @@
       <image x="1030" y="330" href="images/chart-2-xxl.png" width="150">
     </svg>
 </div>
-<hr />
-<h3 class="title">Projects Completed</h3>
+<h3 class="title">Built Projects</h3>
 <div id="projects">
   <!--showsthe projects and their descriptions.
 The class vertical rule is for adding a line, as in the design-->
   {% if projects %}
   {% for project in projects %}
-  <div class="card">
+  <div class="card col-md-5">
     <div class="card-image">
-      <div id="project1" style="background-image: url('{{project.image_path.url}}'); height: 60vh;">
+      <div id="project1" style="background-image: url('{{project.image_path.url}}'); width: 100%;">
 
       </div>
     </div>
-    <div class="card-body">
-      <h4>{{project.title}}</h4>
+    <div class="card-body p-4">
+      <h4 class="projecttitle">{{project.title}}</h4>
       <p class="projectDescription">{{project.description|safe}}</p>
       <div class="card-footer">
         Technologies used:

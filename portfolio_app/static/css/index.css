@@ -393,14 +393,28 @@ svg:hover{
 }
   /*Styling the projec samples section*/
   #projects{
-    height: 600px;
+    height: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    overflow: scroll;
-    padding: 2%;
+    justify-content: space-evenly;
+  }
+  #projects>.card{
+    height: auto;
+  }
+  #projects>.card>.card-image{
+    height: 60vh;
+  }
+  #projects>.card>.card-image>#project1{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  #projects1{
+    height: 100%;
   }
   .title{
     text-align: center;
@@ -409,18 +423,12 @@ svg:hover{
     background-color: var(--brown);
     padding: 1.5%
   }
-  #project1, #project2, #project3, #project4{
-    margin: 3% 2% 0 2%;
-    height: 40%;
-    width: 460px;
-  }
   .projectDescription{
     background-color: var(--brown);
-    width: 40%;
-    height: 100%;
+    width: 100%;
+    height: auto;
     border: 2px solid var(--gold);
     color: white;
-    padding: 2.5%;
     font-size: 0.8em;
 
   }
