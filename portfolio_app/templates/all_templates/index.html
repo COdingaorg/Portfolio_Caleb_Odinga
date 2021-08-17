@@ -7,27 +7,48 @@
   <!--THis part creates the nav bar, including logo and nav link buttons-->
   <div id="landing">
     <!-- This part defines the langing page, banner, What a usersees immediately they visit the site-->
-    <span id="face"></span>
-    <span class="greeting">
-      <h4 class="intro_mess">{{profile.intro_message}}</h4>
-      <p class="tagline">{{profile.tagline}}</p>
-    </span>
-    <div id="description">
-      <p>{{profile.mantra}}</p>
+    <div class="banner">
+      <img src="../../static/images/OrgCoral_Ofc-01_Concept-06.jpg" alt="">
+    </div>
+    <div class="greeting">
+      <h4 class="intro_mess">{{profile.tagline}}</h4>
     </div>
   </div>
-  <hr />
+  <div class="horizontal"></div>
+  <div id="description" class="row m-0">
+    <div class="card col-md-8">
+      <div class="card-footer">
+        <div class="card-text">
+          <p class="tagline">{{profile.intro_message}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card col-md-4">
+      <div class="card-footer">
+        <div class="card-text">
+          &OpenCurlyDoubleQuote;<cite>{{profile.mantra}}</cite>&CloseCurlyDoubleQuote;
+        </div>
+      </div>
+    </div>
+  </div>
   <div id="background" class="row">
     <!--This part illustrates the background section. On the right side is a mapline, in future these are made link to different parts of the story. Once cicked the corresponding part of the story highlights-->
     <div id="the-story">
+      <h3 class="bold">Background</h3>
       {% if background %}
       {% for story in background%}
-      <div class="card">
-        <div class="card-title">
+      <div class="card col-md-12">
+        <div class="card-title col-md-12">
           <h2>{{story.title}}</h2>
         </div>
-        <div class="card-body">
-          <p id="intro">{{story.description}}</p>
+        <div class="card-body d-flex flex-row">
+          <div class="col-md-4">
+            <img src="{{background.image_path.url}}" alt="{{background.title}}" style="width: 100%;">
+          </div>
+          <div class="">
+            <p id="intro">{{story.description}}</p>
+          </div>
+
         </div>
         {% if story.links%}
         <div class="card-footer">
@@ -48,11 +69,14 @@
     </div>
 
   </div>
-  <hr />
+  <div class="horizontal"></div>
   <div class="tools">
-    <h4 id="gal">Creative Tools</h4>
+    <div class="titler">
+      <h3 class="bold">Creative Tools</h3>
+      <h6>Tools used in building projects</h6>
+    </div>
     {% if tools %}
-    <div id="gallery" class="row">
+    <div id="gallery">
       {% for tool in tools %}
       <div class="card">
         <div class="card-image">

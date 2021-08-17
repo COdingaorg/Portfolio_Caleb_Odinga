@@ -16,7 +16,9 @@ def index(request):
   renders index page
   '''
   title = 'Home'
+  tools = Tools.objects.all()
   context = {
+    'tools':tools,
     'user': user,
     'profile':main_profile,
     'title':title

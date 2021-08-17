@@ -42,6 +42,9 @@
   width: 100%;
   border: 2px solid yellow;
   background-color: var(--backg);
+  
+}.tools>.titler{
+  padding-left: 50px;
 }
 .main_page{
   background-color: rgba(179, 179, 179, .2);
