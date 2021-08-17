@@ -354,97 +354,15 @@ svg:hover{
   text-decoration: underline;
   color: var(--brown)  ;
 }
-#skills{
-  width: 80%;
-  height: 350px;
-  position: relative;
-  left: 20%;
-  padding: 0;
-  margin-bottom: 5%;
-  color: white;
-  text-shadow: 2px 0px 0px black;
-}
-#skills>h3{
-  color: var(--brown);
-  text-shadow: none;
-  text-decoration: underline;
-  margin-bottom: 2%;
-}
-#skill1{
-  background-color: var(--brown);
-  margin: 1%;
+#skill{
   margin-bottom: 0;
   width: 20%;
   height: 50%;
   position: absolute;
   left: 0px;
-  background-image: url('../images/html5.png');
   background-position: center;
   background-size: contain;
   transition: ease 0.5s;
-}
-#skill2{
-  background-color: #eb691e;
-  margin: 1%;
-  margin-bottom: 0;
-  width: 40%;
-  height: 50%;
-  position: absolute;
-  left: 21%;
-  background-image: url('../images/css3.jpeg');
-  transition: ease 0.5s;
-}
-#skill3{
-  background-color: #885538;
-  width: 36%;
-  height: 103%;
-  margin: 1%;
-  position: absolute;
-  left: 62%;
-  background-image: url('../images/js.jpg');
-  background-position: center;
-  background-size: 160%;
-  transition: ease 0.5s;
-}
-#skill4{
-  background-color: #ff5e00;
-  width: 61%;
-  height: 50%;
-  margin-left: 1%;
-  position: relative;
-  top: 56%;
-  background-image: url('../images/figma.png');
-  background-position: center;
-  background-size: 130%;
-  transition: ease 0.5s;
-  margin-top: -4%;
-}
-#skill1:hover, #skill2:hover, #skill3:hover, #skill4:hover{
-  background-size: 200%;
-  background-position: center;
-  transition: ease 0.8s;
-}
-#skill1 p:hover, #skill2 p:hover, #skill3 p:hover, #skill4 p:hover{
-  background-color: rgba(255, 255, 255, 0.5);
-  height: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10%;
-  font-size: 2em;
-  color: black;
-  text-shadow: 2px dashed var(--gold);
-  font-family: Nexa;
-  transition: ease 0.8s ;
-}
-#skill1 p, #skill2 p, #skill3 p, #skill4 p {
-background-color: rgba(255, 255, 255, 0);
-height: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-margin-top: 10%;
-transition: ease 0.5s;
 }
   /*Styling the projec samples section*/
   #projects{

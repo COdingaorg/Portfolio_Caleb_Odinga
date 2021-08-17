@@ -1,7 +1,7 @@
 from django.contrib import messages
 from portfolio_app.forms import BackgroundForm, ContactForm, CreateProfile, HobbyForm, ProjectsForm, SkillForm, SocialForm, ToolsForm
 from django.shortcuts import redirect, render
-from .models import Profile, User
+from .models import Profile, Projects, Skill, Tools, User
 
 # Create your views here.
 
@@ -29,8 +29,12 @@ def projects(request):
   '''
   renders projects page
   '''
+  skills = Skill.objects.filter(profile = main_profile)
   title = 'Projects'
+  projects = Projects.objects.filter(profile = main_profile)
   context = {
+    'projects':projects,
+    'skills':skills,    
     'title':title
   }
   return render(request, 'all_templates/projects.html', context)
@@ -57,11 +61,11 @@ def contacts(request):
   if request.method == "POST" and 'update_profile' in request.POST:
     form = ContactForm(request.POST)
     if form.is_valid():
-      new_profile = form.save(commit = False)
-      new_profile.user = user
-      new_profile.save()
+      new_contact = form.save(commit = False)
+      new_contact.profile = main_profile
+      new_contact.save()
 
-      messages.success(request, 'Profile created successfully')
+      messages.success(request, 'Contact created successfully')
       return redirect('profile')
   else: 
     form = ContactForm
@@ -130,15 +134,17 @@ def skills(request):
   renders skills page
   '''
 
-  if request.method == "POST" and 'update_profile' in request.POST:
+  if request.method == "POST" and 'skills' in request.POST:
     form = SkillForm(request.POST, request.FILES)
     if form.is_valid():
-      new_profile = form.save(commit = False)
-      new_profile.user = user
-      new_profile.save()
+      new_skill = form.save(commit = False)
+      new_skill.profile = main_profile
+      new_skill.save()
 
-      messages.success(request, 'Profile created successfully')
-      return redirect('profile')
+      messages.success(request, 'Skill Added successfully')
+      return redirect('skills')
+    else:
+      messages.warning(request, 'Invalid Form')
   else: 
     form = SkillForm
     title = 'skills'
@@ -159,12 +165,14 @@ def tools(request):
   if request.method == "POST" and 'update_profile' in request.POST:
     form = ToolsForm(request.POST, request.FILES)
     if form.is_valid():
-      new_profile = form.save(commit = False)
-      new_profile.user = user
-      new_profile.save()
+      new_tool = form.save(commit = False)
+      new_tool.save()
 
-      messages.success(request, 'Profile created successfully')
-      return redirect('profile')
+      messages.success(request, 'Tool added successfully')
+      return redirect('tools')
+    else:
+      messages.warning(request, 'Invalid Form or Input')
+      return redirect('tools')
   else: 
     form = ToolsForm
     title = 'tools'
@@ -185,12 +193,12 @@ def social(request):
   if request.method == "POST" and 'update_profile' in request.POST:
     form = SocialForm(request.POST, request.FILES)
     if form.is_valid():
-      new_profile = form.save(commit = False)
-      new_profile.user = user
-      new_profile.save()
+      new_social = form.save(commit = False)
+      new_social.profile = main_profile
+      new_social.save()
 
-      messages.success(request, 'Profile created successfully')
-      return redirect('profile')
+      messages.success(request, 'new Social created successfully')
+      return redirect('social')
   else: 
     form = SocialForm
     title = 'social'
@@ -237,20 +245,22 @@ def projectform(request):
   if request.method == "POST" and 'update_profile' in request.POST:
     form = ProjectsForm(request.POST, request.FILES)
     if form.is_valid():
-      new_profile = form.save(commit = False)
-      new_profile.user = user
-      new_profile.save()
+      new_project = form.save(commit = False)
+      new_project.profile = main_profile
+      new_project.save()
 
-      messages.success(request, 'Profile created successfully')
-      return redirect('profile')
+      messages.success(request, 'Project created successfully')
+      return redirect('projectform')
   else: 
+    
     form = ProjectsForm
     title = 'project'
+    
     context = {
       'user': user,
       'profile':main_profile,
       'form':form,
       'title':title
     }
-    return render(request, 'all_templates/social.html', context)
+    return render(request, 'all_templates/project_form.html', context)
 

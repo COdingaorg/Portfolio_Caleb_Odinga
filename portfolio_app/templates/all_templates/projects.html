@@ -91,13 +91,13 @@ The class vertical rule is for adding a line, as in the design-->
   {% for project in projects %}
   <div class="card">
     <div class="card-image">
-      <div id="project1" style="background-image: url('{{project.image_path.url}}');">
+      <div id="project1" style="background-image: url('{{project.image_path.url}}'); height: 60vh;">
 
       </div>
     </div>
     <div class="card-body">
       <h4>{{project.title}}</h4>
-      <p class="projectDescription">{{project.description}}</p>
+      <p class="projectDescription">{{project.description|safe}}</p>
       <div class="card-footer">
         Technologies used:
         {{project.skill.title}}
@@ -134,8 +134,13 @@ The class vertical rule is for adding a line, as in the design-->
     <h3>Technology used</h3>
     {% if skills %}
     {% for skill in skills %}
-    <div id="skill1">
-      <p>HTML5</p>
+    <div id="skill" style="background-image: url('{{skill.images_path.url}}');">
+      <div class="skill-card">
+         <p>{{skill.title}}</p>
+      </div>
+      <div class="skill-body">
+        <p>{{skill.description}}</p>
+      </div>      
     </div>
     {% endfor %}
     {%else%}
