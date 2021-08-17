@@ -1,42 +1,42 @@
 from .models import Profile, Contact, Background, Skill, Tools, Social, Projects, Hobby
-from django.contrib.auth import forms
+from django import forms
 
-class CreateProfile(forms.Form):
+class CreateProfile(forms.ModelForm):
   class Meta:
-    models = Profile
-    exclude = ['user']
+    model = Profile
+    fields = ['photo_path', 'intro_message','tagline', 'mantra']
 
-class ContactForm(forms.Form):
+class ContactForm(forms.ModelForm):
   class Meta:
-    models = Contact
+    model = Contact
     exclude = ['profile']
 
-class BackgroundForm(forms.Form):
+class BackgroundForm(forms.ModelForm):
   class Meta:
-    models = Background
+    model = Background
     exclude = ['profile']
 
-class SkillForm(forms.Form):
+class SkillForm(forms.ModelForm):
   class Meta:
-    models = Skill
+    model = Skill
     exclude = ['profile']
 
-class ToolsForm(forms.Form):
+class ToolsForm(forms.ModelForm):
   class Meta:
-    models = Tools
-    fields = ['__all__']
+    model = Tools
+    fields = ('__all__')
 
-class SocialForm(forms.Form):
+class SocialForm(forms.ModelForm):
   class Meta:
-    models = Social
+    model = Social
     exclude = ['profile']
 
-class ProjectsForm(forms.Form):
+class ProjectsForm(forms.ModelForm):
   class Meta:
-    models = Projects
+    model = Projects
     exclude = ['profile']
 
-class HobbyForm(forms.Form):
+class HobbyForm(forms.ModelForm):
   class Meta:
-    models = Hobby
+    model = Hobby
     exclude = ['profile']

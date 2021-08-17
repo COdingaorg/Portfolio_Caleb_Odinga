@@ -155,7 +155,7 @@ button>.active{
   margin-right: 5px;
 }
 /*Styling paragraph next to the image on landing page*/
-.greeting p:first-child{
+.greeting>.intro_mess{
   border:4px solid var(--gold);
   position: relative;
   text-align: left;
@@ -173,12 +173,12 @@ button>.active{
   font-family: nexa;
   font-style: 800;
 }
-.greeting p:first-child a{
+.greeting>.intro_mess>a{
   color: white;
   font-family: nexa;
   font-size: 1.3em;
 }
-.greeting p:nth-child(2), #description{
+.greeting .tagline, #description{
   margin: 5% 0% 5% 0%;
   text-align: center;
   font-family: nexa;
@@ -255,8 +255,10 @@ button>.active{
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 0;
-  margin-top: -1%;
-  padding-top: 2%;
+  height: 80vh;
+  margin-top: -2vh;
+  padding: 2vh 0;
+  width: 99 vw;
 }
 #the-story{
   margin-top: -8%;

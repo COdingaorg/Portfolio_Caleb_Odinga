@@ -3,10 +3,9 @@
 {% load bootstrap4 %}
 
 {% block content %}
-<div class="col-md-12 main_page">
   <div class="col-md-12 playlist">
 
-    {% if user_profile%}
+    {% if profile%}
     {% if posts%}
     {% for post in posts %}
 
@@ -40,6 +39,56 @@
     {%endif%}
 
   </div>
-</div>
+  <div class="col-md-12 recc">
+    {% if profile%}
+    {% if recc_items%}
+    {% for community in recc_items %}
+
+    {{community.name}}
+
+    {%endfor%}
+    {%else%}
+    <p class="text-center">No Communities in Recommendation</p>
+    {%endif%}
+    {%else%}
+    <p class="text-center">Add Your Profile to Proceed</p>
+
+    {%endif%}
+  </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-center" id="exampleModalLongTitle">Update Profile</h5><img
+              src="{% if profile %}{{profile.photo_path.url}}{%else%}../../../static/images/human-avatar-profle.png{%endif%}"
+              alt="" class="ml-5 mr-5" width="30px" height="30px" style="background-color: white; border-radius: 50%;">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          {% for message in messages%}
+          <div class="alert a btn_control">
+            {{message}}
+          </div>
+          {%endfor%}
+          <form action="" method="POST" enctype="multipart/form-data">
+            {%csrf_token%}
+            <div class="modal-body">
+              <!--Update profile form-->
+              {{form.as_p}}
+              <!--end of form -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="close btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" name="update_profile" class="btn btn-outline-success">Save changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--End of modal window-->
 
 {%endblock%}
