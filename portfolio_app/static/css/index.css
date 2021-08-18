@@ -265,8 +265,11 @@ cite{
 #background{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 99vw;
+  background-color: rgb(242, 246, 255);
+  padding: 0;
 }
 #landing{
   background-color: white;
@@ -306,7 +309,6 @@ cite{
 #the-story{
   width: 90%;
   border-radius: 15px;
-  background-position: center;
   height: auto;
   color: black;
   border: 2px sold red;
@@ -406,6 +408,7 @@ svg:hover{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
+    background-color: rgb(242, 246, 255);
   }
   #projects>.card{
     height: auto;
