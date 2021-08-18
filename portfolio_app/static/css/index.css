@@ -47,7 +47,7 @@ body{
 /*Styling for navbar */
 #navbar{
   height: auto;
-  background-color: var(--orange);
+  background-color: var(--brown);
   color: white;
   display: flex;
   flex-direction: row;
@@ -220,6 +220,10 @@ cite{
   color: var(--brown);
   text-decoration: underline;
   }
+
+#the-story>div:nth-child(3){
+  width: 100%;
+}
 /*Styling for contact page*/
 #contact{
   margin-top: 5%;

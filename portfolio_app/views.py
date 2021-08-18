@@ -3,7 +3,7 @@ from django.contrib.auth import login, logout, authenticate
 from portfolio_app.forms import BackgroundForm, ContactForm, CreateProfile, HobbyForm, ProjectsForm, SkillForm, SocialForm, ToolsForm, LoginForm
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
-from .models import Contact, Profile, Projects, Skill, Tools, User
+from .models import Background, Contact, Profile, Projects, Skill, Tools, User
 
 # Create your views here.
 
@@ -46,7 +46,9 @@ def index(request):
   '''
   title = 'Home'
   tools = Tools.objects.all()
+  background = Background.objects.all()
   context = {
+    'background':background,
     'contacts':contacts,
     'tools':tools,
     'user': user,
@@ -150,9 +152,9 @@ def background(request):
   if request.method == "POST" and 'update_profile' in request.POST:
     form = BackgroundForm(request.POST)
     if form.is_valid():
-      new_profile = form.save(commit = False)
-      new_profile.user = user
-      new_profile.save()
+      new_background = form.save(commit = False)
+      new_background.profile = main_profile
+      new_background.save()
 
       messages.success(request, 'Background created successfully')
       return redirect('profile')

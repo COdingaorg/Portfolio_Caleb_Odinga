@@ -14,5 +14,8 @@ $(document).ready(function () {
     $("#footer_page").css({'border':'2px solid gold'})
     
   })
-
+  $('div#the-story:nth-child(3)').removeclass('col-md-6')
+  $('div#the-story:nth-child(3)').addclass('col-md-12')
+  $('div#the-story:nth-child(3)').css({'border':'red'})
+  
 })

@@ -31,38 +31,47 @@
       </div>
     </div>
   </div>
-  <div id="background" class="row">
+  <div id="background" class="d-flex flex-row flex-wrap align-items-center justify-content-space-evenly">
     <!--This part illustrates the background section. On the right side is a mapline, in future these are made link to different parts of the story. Once cicked the corresponding part of the story highlights-->
     <div id="the-story">
       <h3 class="bold">Background</h3>
       {% if background %}
       {% for story in background%}
-      <div class="card col-md-12">
+      <div class="card col-md-6">
         <div class="card-title col-md-12">
-          <h2>{{story.title}}</h2>
+          <h2>
+            < {{story.title}} />
+          </h2>
         </div>
+
         <div class="card-body d-flex flex-row">
+          {% if background.image_path.url %}
           <div class="col-md-4">
             <img src="{{background.image_path.url}}" alt="{{background.title}}" style="width: 100%;">
           </div>
+          {%endif%}
           <div class="">
-            <p id="intro">{{story.description}}</p>
+            <p id="intro">{{story.description|safe}}</p>
           </div>
 
         </div>
+
         {% if story.links%}
         <div class="card-footer">
-          <h6 class="bold">{{story.links}}</h6>
-        </div>
-        {%endif%}
-
-        <div id="mapline">
-          <a href="">
-            <div id="map1">Intro</div>
+          <a href="https://github.com/COdingaorg">
+            <h6 class="bold">Github Link</h6>
           </a>
         </div>
+        {%endif%}
       </div>
+
       {%endfor%}
+      <div class="card col-md-6">
+        <div class="card-image col-md-12">
+          <img src="{% static 'images/20944346.jpg' %}" alt="" style="width: 100%;">
+        </div>
+      </div>
+
       {%else%}
       <p class="bold">No Stories added!</p>
       {%endif%}
