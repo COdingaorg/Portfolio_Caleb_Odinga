@@ -63,11 +63,17 @@ body{
   justify-content: center;
 }
 #navbar button, #projectstab{
-  border-radius: 5px;
+  border-radius: 3px;
   background-color: var(--brown);
-  border: 2px solid var(--gold);
+  border: 1px solid var(--gold);
   padding: 4px;
   margin: 0px 8px;
+  box-shadow: 1px 1px 1px var(--orange);
+}
+#navbar button:active, #navbar button:hover{
+  border: 1px solid white;
+  color: var(--brown);
+  background-color: white;
 }
 #navbar a, #projectstab{
   color: white;
