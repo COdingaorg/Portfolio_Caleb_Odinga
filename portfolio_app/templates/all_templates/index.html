@@ -87,11 +87,11 @@
     {% if tools %}
     <div id="gallery">
       {% for tool in tools %}
-      <div class="card">
+      <div class="card d-flex align-items-center justify-content-space-around">
         <div class="card-image">
           <img alt="{{tool.title}}" src="{{tool.image_path.url}}">
         </div>
-        <div class="card-body">
+        <div class="card-body col-md-12">
           <h5 class="card-title">
             {{tool.title}}
           </h5>
