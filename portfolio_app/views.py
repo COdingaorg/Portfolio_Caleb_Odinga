@@ -1,7 +1,9 @@
 from django.contrib import messages
-from portfolio_app.forms import BackgroundForm, ContactForm, CreateProfile, HobbyForm, ProjectsForm, SkillForm, SocialForm, ToolsForm
+from django.contrib.auth import login, logout, authenticate
+from portfolio_app.forms import BackgroundForm, ContactForm, CreateProfile, HobbyForm, ProjectsForm, SkillForm, SocialForm, ToolsForm, LoginForm
 from django.shortcuts import redirect, render
-from .models import Profile, Projects, Skill, Tools, User
+from django.contrib.auth.decorators import login_required
+from .models import Contact, Profile, Projects, Skill, Tools, User
 
 # Create your views here.
 
@@ -9,6 +11,33 @@ from .models import Profile, Projects, Skill, Tools, User
 #global variables
 user = User.objects.filter(username__icontains = 'caleb', last_name__icontains = 'odinga', email = 'calemasanga@gmail.com' ).last()
 main_profile = Profile.objects.filter(user = user).last()
+contacts = Contact.objects.filter(profile = main_profile)
+
+#login user
+def login_user(request):
+  title = 'Login to Your Account'
+  form = LoginForm
+  if request.method == 'POST':
+    username = request.POST.get('username')
+    password = request.POST.get('password')
+    newlogin =  authenticate(request, username = username, password = password)
+    if newlogin:
+      login(request, newlogin)
+
+      messages.success(request, 'Login successful. Add Profile to proceed')
+      return redirect('/')
+
+    else:
+      messages.warning(request, 'Incorrect Username or Password')
+      return redirect('login_user')
+  
+  
+  context = {
+    'title':title,
+    'form':form,
+    }
+
+  return render(request, 'registration/login.html', context)
 
 #view function to index page
 def index(request):
@@ -18,6 +47,7 @@ def index(request):
   title = 'Home'
   tools = Tools.objects.all()
   context = {
+    'contacts':contacts,
     'tools':tools,
     'user': user,
     'profile':main_profile,
@@ -35,6 +65,7 @@ def projects(request):
   title = 'Projects'
   projects = Projects.objects.filter(profile = main_profile)
   context = {
+    'contacts':contacts,
     'projects':projects,
     'skills':skills,    
     'title':title
@@ -48,6 +79,7 @@ def hobbies(request):
   '''
   title = 'Fun side'
   context = {
+    'contacts':contacts,
     'user': user,
     'profile':main_profile,
     'title':title
@@ -55,6 +87,7 @@ def hobbies(request):
   return render(request, 'all_templates/hobbies.html', context)
 
 #view function to projects page
+@login_required(login_url='/')
 def contacts(request):
   '''
   renders contacts page
@@ -73,6 +106,7 @@ def contacts(request):
     form = ContactForm
     title = 'Contacts'
     context = {
+      'contacts':contacts,
       'user': user,
       'profile':main_profile,
       'form':form,
@@ -81,6 +115,7 @@ def contacts(request):
     return render(request, 'all_templates/contact.html', context)
 
 #view function to profile page
+@login_required(login_url='/')
 def profile(request):
   '''
   renders profile page
@@ -98,6 +133,7 @@ def profile(request):
     form = CreateProfile
     title = 'Admin Profile  '
     context = {
+      'contacts':contacts,
       'user':user,
       'profile':main_profile,
       'form':form,
@@ -106,6 +142,7 @@ def profile(request):
     return render(request, 'all_templates/profile.html', context)
 
 #view function to background page
+@login_required(login_url='/')
 def background(request):
   '''
   renders background page
@@ -123,6 +160,7 @@ def background(request):
     form = BackgroundForm
     title = 'background'
     context = {
+      'contacts':contacts,
       'user': user,
       'profile':main_profile,
       'form':form,
@@ -131,6 +169,7 @@ def background(request):
     return render(request, 'all_templates/background.html', context)
 
 #view function to skill page
+@login_required(login_url='/')
 def skills(request):
   '''
   renders skills page
@@ -151,6 +190,7 @@ def skills(request):
     form = SkillForm
     title = 'skills'
     context = {
+      'contacts':contacts,
       'user': user,
       'profile':main_profile,
       'form':form,
@@ -159,6 +199,7 @@ def skills(request):
     return render(request, 'all_templates/skills.html', context)
 
 #view function to tools page
+@login_required(login_url='/')
 def tools(request):
   '''
   renders tools page
@@ -179,6 +220,7 @@ def tools(request):
     form = ToolsForm
     title = 'tools'
     context = {
+      'contacts':contacts,
       'user': user,
       'profile':main_profile,
       'form':form,
@@ -187,6 +229,7 @@ def tools(request):
     return render(request, 'all_templates/tools.html', context)
 
 #view function to social page
+@login_required(login_url='/')
 def social(request):
   '''
   renders social accounts page
@@ -205,6 +248,7 @@ def social(request):
     form = SocialForm
     title = 'social'
     context = {
+      'contacts':contacts,
       'user': user,
       'profile':main_profile,
       'form':form,
@@ -213,6 +257,7 @@ def social(request):
     return render(request, 'all_templates/social.html', context)
 
 #view function to hobby form page
+@login_required(login_url='/')
 def hobbyform(request):
   '''
   renders hobby form page
@@ -231,6 +276,7 @@ def hobbyform(request):
     form = HobbyForm
     title = 'hobby'
     context = {
+      'contacts':contacts,
       'user': user,
       'profile':main_profile,
       'form':form,
@@ -239,6 +285,7 @@ def hobbyform(request):
     return render(request, 'all_templates/social.html', context)
 
 #view function to project form page
+@login_required(login_url='/')
 def projectform(request):
   '''
   renders project form page
@@ -259,6 +306,7 @@ def projectform(request):
     title = 'project'
     
     context = {
+      'contacts':contacts,
       'user': user,
       'profile':main_profile,
       'form':form,

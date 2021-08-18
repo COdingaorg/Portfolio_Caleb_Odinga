@@ -6,7 +6,8 @@
   <div class="nav_items">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent navbar-custom p-0">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -17,25 +18,30 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'project'%}"><button>Projects</button></a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="{% url 'hobby' %}"><button>Fun Side</button></a>
-          </li>
+          </li> -->
+
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'contact' %}"><button>Let's Talk</button></a>
+            <a class="nav-link" href="">
+              <button id="talk_talk">Let's Talk</button>
+            </a>
           </li>
+          {% if current_user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'profile' %}"><button>Profile</button></a>
           </li>
+          {% endif %}
         </ul>
       </div>
     </nav>
 
 
-   
-    
-    
-    
 
-    
+
+
+
+
+
   </div>
 </div>

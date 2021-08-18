@@ -358,19 +358,16 @@ svg:hover{
   transition: ease-in 0.8s;
 }
 /*Styling the skillspart*/
-.topp{
-  padding:2% 5% 2% 5%;
-
-}
 #sidebar{
-  padding: 3% 1% 6% 3%;
+  padding: 3%;
   float: left;
   width: 20%;
   line-height: 2em;
-  background-color: #6d7Ebc;
-  border-radius: 15px;
-  margin-top: 8%;
+  background-color: var(--brown);
+  border-radius: 5px;
   margin-right: 1%;
+  border: 2px solid var(--gold);
+  height: 40vh;
 }
 #sidebar a, #sidebar h3{
   color: white;
@@ -381,11 +378,11 @@ svg:hover{
   text-decoration: underline;
   color: var(--brown)  ;
 }
+.github>a>img:hover{
+  width: 60px;
+  border: 2px solid var(--gold);
+}
 #skill{
-  margin-bottom: 0;
-  width: 20%;
-  height: 50%;
-  position: absolute;
   left: 0px;
   background-position: center;
   background-size: contain;
@@ -444,32 +441,6 @@ svg:hover{
     background-position: center;
     border: 3px solid red;
     
-  }
-  #project2 #polygon, #project3 #polygon{
-    border: 3px solid var(--gold);
-    height: 100%;
-    width: 60%;
-    float: left;
-
-    border-radius:15px 0 0 15px;
-  }
-  #project2 .projectDescription, #project3 .projectDescription{
-    float: right;
-  }
-  #project1 #polygon{
-    background-size: cover;
-  }
-  #project2 #polygon{
-    background-image: url('../images/Screenshot\ from\ 2021-04-03\ 16-12-30.png');
-    background-size: cover;
-  }
-  #project3 #polygon{
-    background-image: url('../images/Screenshot\ from\ 2021-04-03\ 16-12-43.png');
-    background-size: cover;
-  }
-  #project4 #polygon{
-    background-image: url('../images/Screenshot\ from\ 2021-04-03\ 16-19-42.png');
-    background-size: cover;
   }
   /*Styling Hobbies page. Aso labeled as Fun side"*/
   #fun{
@@ -541,4 +512,39 @@ svg:hover{
   #play audio{
     margin-top: 2%;
   }
- 
+
+  /*styling footer */
+  .footer{
+    background-color: var(--brown);
+    padding: 10px;
+    color: white;
+    height: auto;
+    min-height: 50vh;
+    
+    
+  }
+ .footer_form{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   min-height: 30vh;
+   height: auto;
+   overflow-wrap: normal;
+   
+ }
+ .footer_form>div{
+   margin: 0 20px;
+ }
+ .mc-field-group>input{
+   background-color: none;
+   height: 30px;
+   border-radius: 3px;
+   border: 1px solid var(--gold);
+   margin-bottom: 2px;
+ }
+ #mce-MMERGE7{
+   height: 80px;
+ }
+ #mc_embed_signup{
+   margin-left: 30px;
+ }

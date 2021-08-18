@@ -29,6 +29,12 @@
 
   {% endblock %}
   {% include 'all_templates/footer.html' %}
+  {% block scripts %}
+  {% bootstrap_javascript %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
+  <script src="{% static 'js/index.js'%}"></script>
+  {%endblock%}
 </body>
 
 </html>

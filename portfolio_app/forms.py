@@ -1,5 +1,13 @@
 from .models import Profile, Contact, Background, Skill, Tools, Social, Projects, Hobby
 from django import forms
+from django.contrib.auth.forms import AuthenticationForm
+from .models import User
+
+
+class LoginForm(AuthenticationForm):
+  class Meta:
+    model = User
+    fields = ['__all__']
 
 class CreateProfile(forms.ModelForm):
   class Meta:

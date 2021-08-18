@@ -1,0 +1,60 @@
+{% load static %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {%if title%}
+  <title>{{title}}</title>
+  {%else%}
+  <title>Login Page</title>
+  {%endif%}
+
+  {%block styles%}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/login_styles.css'%}">
+  {%endblock%}
+</head>
+
+<body>
+  <h1 class="text-center">Portfolio</h1>
+  <h6><i> More than you know...</i></h6>
+  {% block content %}
+  <div class="container" id="container">
+    <div class="form-container sign-in-container">
+      <form action="#" method="POST">
+        {%csrf_token%}
+        <h1>Sign in</h1>
+        {% for message in messages%}
+        <p class="alert-danger text-center p-2">{{message}}</p>
+        {%endfor%}
+        {% for error in form_buss.errors%}
+        <div class="alert alert-danger">{{error}}</div>
+        {%endfor%}
+        
+        <span>Use your account details</span>
+        <br>
+        {{form.as_p}}
+        <a href="#">Forgot your password?</a>
+        <button type="submit">Sign In</button>
+        <a href="">Create Account</a>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-right">
+          <h1>New Updates Available!</h1>
+          <p>To keep connected with us please login with your personal info</p>
+          <h5>Don't have an Account? <a href="">Create Account</a></h5>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  {%endblock%}
+</body>
+
+</html>

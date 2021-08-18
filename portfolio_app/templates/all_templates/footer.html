@@ -15,77 +15,112 @@
 </head>
 
 <body>
-  <div id="mc_embed_signup">
-    <form
-      action="https://moringaschool.us1.list-manage.com/subscribe/post?u=174a56398a62346a043ebcc8f&amp;id=1b87154668"
-      method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
-      novalidate>
-      <div id="mc_embed_signup_scroll">
-        <h2>Subscribe</h2>
-        <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-        <div class="mc-field-group">
-          <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
-          </label>
-          <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-        </div>
-        <div class="mc-field-group">
-          <label for="mce-FNAME">First Name </label>
-          <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
-        </div>
-        <div class="mc-field-group size1of2">
-          <label for="mce-PHONE">Phone Number </label>
-          <input type="text" name="PHONE" class="" value="" id="mce-PHONE">
-        </div>
-        <div class="mc-field-group size1of2">
-          <label for="mce-MMERGE2-month">Cake day <span class="asterisk">*</span>
-          </label>
-          <div class="datefield">
-            <span class="subfield dayfield"><input class="birthday required" type="text" pattern="[0-9]*" value=""
-                placeholder="DD" size="2" maxlength="2" name="MMERGE2[day]" id="mce-MMERGE2-day"></span> /
-            <span class="subfield monthfield"><input class="birthday required" type="text" pattern="[0-9]*" value=""
-                placeholder="MM" size="2" maxlength="2" name="MMERGE2[month]" id="mce-MMERGE2-month"></span>
-            <span class="small-meta nowrap">( dd / mm )</span>
+  <div class="footer d-flex flex-row" id="footer_page">
+    <div class="contacts mr-4">
+      {% if contacts %}
+      <h4 class="bold">Let's Talk</h4>
+      <div>
+        {% for contact in contacts %}
+        <p class="bold">{{contact.contact_title}}</p>
+        <p class="bold">{{contact.contact}}</p>
+        {%endfor%}
+      </div>
+      {%else%}
+      <h5 class="bold">Let's Talk</h5>
+      <p>Email: calemasanga@gmail.com</p>
+      <p>Phone: 0768156350</p>
+      <p>Whatsapp: 0702845998</p>
+      {%endif%}
+    </div>
+    <div id="mc_embed_signup">
+      <form
+        action="https://moringaschool.us1.list-manage.com/subscribe/post?u=174a56398a62346a043ebcc8f&amp;id=1b87154668"
+        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
+        novalidate>
+        <div id="mc_embed_signup_scroll">
+          <h4>Leave your Contact Info</h4>
+          <h6>We'll reach out to you</h6>
+          <hr>
+          <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+          <div class="footer_form">
+            <div>
+              <div class="mc-field-group">
+                <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
+                </label><br>
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+              </div>
+              <div class="mc-field-group">
+                <label for="mce-FNAME">First Name </label><br>
+                <input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+              </div>
+            </div>
+            <div>
+              <div class="mc-field-group size1of2">
+                <label for="mce-PHONE">Phone Number </label><br>
+                <input type="text" name="PHONE" class="" value="" id="mce-PHONE">
+              </div>
+              <div class="mc-field-group size1of2">
+                <label for="mce-MMERGE2-month">Cake day <span class="asterisk">*</span>
+                </label><br>
+                <div class="datefield">
+                  <span class="subfield dayfield"><input class="birthday required" type="text" pattern="[0-9]*" value=""
+                      placeholder="DD" size="2" maxlength="2" name="MMERGE2[day]" id="mce-MMERGE2-day"></span> /
+                  <span class="subfield monthfield"><input class="birthday required" type="text" pattern="[0-9]*"
+                      value="" placeholder="MM" size="2" maxlength="2" name="MMERGE2[month]"
+                      id="mce-MMERGE2-month"></span>
+                  <span class="small-meta nowrap">( dd / mm )</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="mc-field-group">
+                <label for="mce-MMERGE7">Your Message </label><br>
+                <input type="text" value="" name="MMERGE7" class="" id="mce-MMERGE7">
+              </div>
+              <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+              </div>
+            </div>
+            <div>
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                  name="b_174a56398a62346a043ebcc8f_1b87154668" tabindex="-1" value=""></div><br>
+              <div class="clear mt-5 mb-0">
+                <input type="submit" value="Subscribe" name="subscribe" placeholder="submit" id="mc-embedded-subscribe"
+                  class="btn btn-light">
+              </div>
+            </div>
           </div>
         </div>
-        <div class="mc-field-group">
-          <label for="mce-MMERGE7">Your Message </label>
-          <input type="text" value="" name="MMERGE7" class="" id="mce-MMERGE7">
-        </div>
-        <div id="mce-responses" class="clear">
-          <div class="response" id="mce-error-response" style="display:none"></div>
-          <div class="response" id="mce-success-response" style="display:none"></div>
-        </div>
-        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
-            name="b_174a56398a62346a043ebcc8f_1b87154668" tabindex="-1" value=""></div>
-        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"
-            class="button"></div>
-      </div>
-    </form>
-  </div>
-  <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-  <script type='text/javascript'>
-    (function ($) {
-      window.fnames = new Array();
-      window.ftypes = new Array();
-      fnames[0] = 'EMAIL';
-      ftypes[0] = 'email';
-      fnames[1] = 'FNAME';
-      ftypes[1] = 'text';
-      fnames[4] = 'PHONE';
-      ftypes[4] = 'phone';
-      fnames[2] = 'MMERGE2';
-      ftypes[2] = 'birthday';
-      fnames[7] = 'MMERGE7';
-      ftypes[7] = 'text';
-    }(jQuery));
-    var $mcj = jQuery.noConflict(true);
-  </script>
-  <!--End mc_embed_signup-->
+      </form>
+    </div>
+    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+    <script type='text/javascript'>
+      (function ($) {
+        window.fnames = new Array();
+        window.ftypes = new Array();
+        fnames[0] = 'EMAIL';
+        ftypes[0] = 'email';
+        fnames[1] = 'FNAME';
+        ftypes[1] = 'text';
+        fnames[4] = 'PHONE';
+        ftypes[4] = 'phone';
+        fnames[2] = 'MMERGE2';
+        ftypes[2] = 'birthday';
+        fnames[7] = 'MMERGE7';
+        ftypes[7] = 'text';
+      }(jQuery));
+      var $mcj = jQuery.noConflict(true);
+    </script>
+    <!--End mc_embed_signup-->
 
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous"></script>
-  <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="{% static 'js/index.js'%}"></script>
+  </div>
   </div>
 </body>
 
