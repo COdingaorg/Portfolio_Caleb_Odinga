@@ -1,9 +1,11 @@
+from portfolio_app.serializers import BackgroundSerializer, ProfileSerializer, UserSerializer
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 from portfolio_app.forms import BackgroundForm, ContactForm, CreateProfile, HobbyForm, ProjectsForm, SkillForm, SocialForm, ToolsForm, LoginForm
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from .models import Background, Contact, Profile, Projects, Skill, Tools, User
+from rest_framework import viewsets, permissions
 
 # Create your views here.
 
@@ -316,3 +318,27 @@ def projectform(request):
     }
     return render(request, 'all_templates/project_form.html', context)
 
+#api view function, that gets and allows editting of models
+class UserViewSet(viewsets.ModelViewSet):
+  '''
+  Api endpoint that allows user to be created and editted
+  '''
+  queryset = User.objects.all()
+  serializer_class = UserSerializer
+  permission_classes = [permissions.IsAuthenticated]
+
+class ProfileViewSet(viewsets.ModelViewSet):
+  '''
+  Api endpoint that allows profiles to be created and editted
+  '''
+  queryset = Profile.objects.all()
+  serializer_class = ProfileSerializer
+  permission_classes = [permissions.IsAuthenticated]
+
+class BackgroundViewSet(viewsets.ModelViewSet):
+  '''
+  Api endpoint that allows Background to be created and editted
+  '''
+  queryset = Background.objects.all()
+  serializer_class = BackgroundSerializer
+  permission_classes = [permissions.IsAuthenticated]
