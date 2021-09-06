@@ -12,40 +12,40 @@ class ProfileSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Profile
-        fields = ['user', 'image', 'intro_message', 'tagline', 'mantra']
+        fields = ['user', 'photo_path', 'intro_message', 'tagline', 'mantra']
 
 class ContactSerializer(serializers.ModelSerializer):
     profile = ProfileSerializer(read_only = True)
     class Meta:
         model = Contact
-        fields = ['__all__']
+        fields = ['contact_title', 'contact', 'profile']
 
 class BackgroundSerializer(serializers.ModelSerializer):
     profile = ProfileSerializer(read_only = True)
     class Meta:
         model = Background
-        fields = ['__all__']
+        fields = ['title', 'description', 'links', 'profile']
 
 class SkillSerializer(serializers.ModelSerializer):
     serializers.ImageField(use_url = True)
     profile = ProfileSerializer(read_only = True)
     class Meta:
         model = Skill
-        fields = ['__all__']
+        fields = ['title', 'description', 'images_path', 'profile']
 
 class ToolsSerializer(serializers.ModelSerializer):
     serializers.ImageField(use_url = True)
     skill = SkillSerializer(read_only = True)
     class Meta:
         model = Tools
-        fields = ['__all__']
+        fields = ['title', 'description', 'image_path', 'skill']
 
 class SocialSerializer(serializers.ModelSerializer):
     serializers.ImageField(use_url = True)
     profile = ProfileSerializer(read_only = True)
     class Meta:
         model = Social
-        fields = ['__all__']
+        fields = ['platform', 'photo_path', 'username', 'profile']
 
 class ProjectsSerializer(serializers.ModelSerializer):
     serializers.ImageField(use_url = True)
@@ -53,7 +53,7 @@ class ProjectsSerializer(serializers.ModelSerializer):
     profile = ProfileSerializer(read_only = True)
     class Meta:
         model = Projects
-        fields = ['__all__']
+        fields = ['title', 'description', 'image_path', 'skill', 'profile']
 
 class HobbySerializer(serializers.ModelSerializer):
     serializers.ImageField(use_url = True)
@@ -61,4 +61,4 @@ class HobbySerializer(serializers.ModelSerializer):
     profile = ProfileSerializer(read_only = True)
     class Meta:
         model = Hobby
-        fields = ['__all__']
+        fields = ['title', 'description', 'image_path', 'file_path', 'profile']

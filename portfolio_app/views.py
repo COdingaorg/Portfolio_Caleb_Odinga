@@ -1,10 +1,10 @@
-from portfolio_app.serializers import BackgroundSerializer, ProfileSerializer, UserSerializer
+from portfolio_app.serializers import BackgroundSerializer, ContactSerializer, HobbySerializer, ProfileSerializer, ProjectsSerializer, SkillSerializer, SocialSerializer, ToolsSerializer, UserSerializer
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 from portfolio_app.forms import BackgroundForm, ContactForm, CreateProfile, HobbyForm, ProjectsForm, SkillForm, SocialForm, ToolsForm, LoginForm
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
-from .models import Background, Contact, Profile, Projects, Skill, Tools, User
+from .models import Background, Contact, Hobby, Profile, Projects, Skill, Social, Tools, User
 from rest_framework import viewsets, permissions
 
 # Create your views here.
@@ -341,4 +341,52 @@ class BackgroundViewSet(viewsets.ModelViewSet):
   '''
   queryset = Background.objects.all()
   serializer_class = BackgroundSerializer
+  permission_classes = [permissions.IsAuthenticated]
+
+class ContactViewSet(viewsets.ModelViewSet):
+  '''
+  Api endpoint that allows contact to be created and editted
+  '''
+  queryset = Contact.objects.all()
+  serializer_class = ContactSerializer
+  permission_classes = [permissions.IsAuthenticated]
+
+class SkillViewSet(viewsets.ModelViewSet):
+  '''
+  Api endpoint that allows Skill to be created and editted
+  '''
+  queryset = Skill.objects.all()
+  serializer_class = SkillSerializer
+  permission_classes = [permissions.IsAuthenticated]
+
+class ToolsViewSet(viewsets.ModelViewSet):
+  '''
+  Api endpoint that allows Tools to be created and editted
+  '''
+  queryset = Tools.objects.all()
+  serializer_class = ToolsSerializer
+  permission_classes = [permissions.IsAuthenticated]
+
+class SocialViewSet(viewsets.ModelViewSet):
+  '''
+  Api endpoint that allows Social to be created and editted
+  '''
+  queryset = Social.objects.all()
+  serializer_class = SocialSerializer
+  permission_classes = [permissions.IsAuthenticated]
+
+class ProjectsViewSet(viewsets.ModelViewSet):
+  '''
+  Api endpoint that allows Projects to be created and editted
+  '''
+  queryset = Projects.objects.all()
+  serializer_class = ProjectsSerializer
+  permission_classes = [permissions.IsAuthenticated]
+
+class HobbyViewSet(viewsets.ModelViewSet):
+  '''
+  Api endpoint that allows Hobby to be created and editted
+  '''
+  queryset = Hobby.objects.all()
+  serializer_class = HobbySerializer
   permission_classes = [permissions.IsAuthenticated]

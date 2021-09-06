@@ -24,6 +24,12 @@ router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'profiles', views.ProfileViewSet)
 router.register(r'background', views.BackgroundViewSet)
+router.register(r'contact', views.ContactViewSet)
+router.register(r'skills', views.SkillViewSet)
+router.register(r'tools', views.ToolsViewSet)
+router.register(r'social', views.SocialViewSet)
+router.register(r'projects', views.ProjectsViewSet)
+router.register(r'hobby', views.HobbyViewSet)
 
 urlpatterns = [
     path('api', include(router.urls)),
