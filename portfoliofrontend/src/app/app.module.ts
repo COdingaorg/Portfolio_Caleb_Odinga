@@ -10,6 +10,7 @@ import { ListcontactComponent } from './listcontact/listcontact.component';
 import { ListtoolsComponent } from './listtools/listtools.component';
 import { ListsocialComponent } from './listsocial/listsocial.component';
 import { ListprojectsComponent } from './listprojects/listprojects.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ListprojectsComponent } from './listprojects/listprojects.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
